@@ -14,4 +14,15 @@ class Project < ActiveRecord::Base
     has_many :users, through: :user_projects
     
     belongs_to :survey
+    
+    
+    def get_due_date(user_id)
+        up = UserProject.find_by(user_id: user_id, project_id: self.id)
+        up.due_date
+    end
+    
+    def get_is_complete(user_id)
+        up = UserProject.find_by(user_id: user_id, project_id: self.id)
+        up.is_complete
+    end
 end

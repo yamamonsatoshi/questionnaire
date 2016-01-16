@@ -1,3 +1,22 @@
 .row
-  aside.col-md-4
   .col-md-8
+    .container
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th アンケート一覧
+          th 締め切り日
+          th 完了しているか
+      tbody
+      - @projects.each do |p|
+        tr
+          td = link_to p.name, answer_survey_project_path(p.id)
+          td = p.get_due_date(@user.id)
+          td
+            - if p.get_is_complete(@user.id)
+              = fa_icon 'check-square-o'
+            - else
+              = fa_icon 'square-o'
+  .col-md-4
+    .container
+

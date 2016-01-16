@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116104250) do
+ActiveRecord::Schema.define(version: 20160116131713) do
 
   create_table "answer_types", force: :cascade do |t|
     t.string   "name"
@@ -25,8 +25,11 @@ ActiveRecord::Schema.define(version: 20160116104250) do
     t.string   "name"
     t.text     "detail"
     t.string   "answer_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "project_id"
+    t.integer  "question_id"
+    t.integer  "user_project_id"
   end
 
   create_table "groups", force: :cascade do |t|

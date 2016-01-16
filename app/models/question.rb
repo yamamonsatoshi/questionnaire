@@ -14,5 +14,7 @@
 
 class Question < ActiveRecord::Base
     belongs_to :group
-    belongs_to :answer_types
+    belongs_to :answer_type
+
+    has_many :answers
 end

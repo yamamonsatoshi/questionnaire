@@ -1,0 +1,17 @@
+.row
+  .col-md-8
+    .container
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th アンケート一覧
+          th 締め切り日
+          th 完了しているか
+      tbody
+        tr
+          td = @project.id
+          td = @survey.id
+          td
+  .col-md-4
+    .container
+

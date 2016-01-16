@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :users
+  resources :projects do 
+    member do
+      get 'answer_survey'
+    end
+    collection do
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

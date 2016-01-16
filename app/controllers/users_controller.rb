@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @projects = @user.projects
   end
   
   # GET /users/new
