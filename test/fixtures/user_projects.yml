@@ -1,11 +1,12 @@
 # == Schema Information
 #
-# Table name: answers
+# Table name: user_projects
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  detail      :text
-#  answer_type :string
+#  user_id     :integer
+#  project_id  :integer
+#  is_complete :boolean
+#  due_date    :date
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -13,11 +14,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  detail: MyText
-  answer_type: MyString
+  user_id: 1
+  project_id: 1
+  is_complete: false
+  due_date: 2016-01-16
 
 two:
-  name: MyString
-  detail: MyText
-  answer_type: MyString
+  user_id: 1
+  project_id: 1
+  is_complete: false
+  due_date: 2016-01-16

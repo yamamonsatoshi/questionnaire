@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: projects
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,10 +9,10 @@
 #  survey_id  :integer
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+class ProjectTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

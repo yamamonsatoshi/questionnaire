@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: projects
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,10 +9,9 @@
 #  survey_id  :integer
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+class Project < ActiveRecord::Base
+    has_many :user_projects
+    has_many :users, through: :user_projects
+    
+    belongs_to :survey
+end

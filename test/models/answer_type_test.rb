@@ -1,17 +1,18 @@
 # == Schema Information
 #
-# Table name: surveys
+# Table name: answer_types
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  detail     :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  pattern    :string
+#  reverse    :integer
 #
 
 require 'test_helper'
 
-class SurveyTest < ActiveSupport::TestCase
+class AnswerTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

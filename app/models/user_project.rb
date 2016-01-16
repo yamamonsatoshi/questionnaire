@@ -1,14 +1,15 @@
 # == Schema Information
 #
-# Table name: answers
+# Table name: user_projects
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  detail      :text
-#  answer_type :string
+#  user_id     :integer
+#  project_id  :integer
+#  is_complete :boolean
+#  due_date    :date
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-class Answer < ActiveRecord::Base
+class UserProject < ActiveRecord::Base
 end

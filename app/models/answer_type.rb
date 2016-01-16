@@ -1,18 +1,15 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: answer_types
 #
 #  id         :integer          not null, primary key
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  survey_id  :integer
+#  pattern    :string
+#  reverse    :integer
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+class AnswerType < ActiveRecord::Base
+    has_many :questions
+end

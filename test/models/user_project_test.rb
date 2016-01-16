@@ -1,18 +1,19 @@
 # == Schema Information
 #
-# Table name: answers
+# Table name: user_projects
 #
 #  id          :integer          not null, primary key
-#  name        :string
-#  detail      :text
-#  answer_type :string
+#  user_id     :integer
+#  project_id  :integer
+#  is_complete :boolean
+#  due_date    :date
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class AnswerTest < ActiveSupport::TestCase
+class UserProjectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

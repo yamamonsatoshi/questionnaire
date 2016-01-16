@@ -57,6 +57,9 @@ group :development, :test do
   gem 'byebug'
   # Use pry
   gem 'pry-byebug'
+
+  # Use erd to watch er graph
+  gem 'rails-erd'
   
 end
 

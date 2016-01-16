@@ -1,20 +1,19 @@
 # == Schema Information
 #
-# Table name: surveys
+# Table name: answer_types
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  detail     :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  pattern    :string
+#  reverse    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
-  detail: MyText
 
 two:
   name: MyString
-  detail: MyText
