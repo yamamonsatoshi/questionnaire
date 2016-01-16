@@ -8,7 +8,8 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 
 # 本番ではpostgressを使用する
-gem 'pg', group: :production
+# TODO 本番のDB
+# gem 'pg', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
