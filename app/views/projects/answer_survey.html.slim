@@ -1,6 +1,5 @@
 .row
   .col-md-8
-    .container
     table.table.table-striped.table-hover
       thead
         tr
@@ -11,7 +10,12 @@
         tr
           td = @project.id
           td = @survey.id
-          td
+          td = ""
+    - @groups.each do |g|
+      hr
+      h4 = g.name
+      hr
+      - g.questions.each do |q|
+        p = q.name
   .col-md-4
-    .container
 

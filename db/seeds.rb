@@ -13,6 +13,20 @@
   pjt.save
 end
 
+Survey.all.each do |s|
+  4.times do |j|
+    g = Group.find_or_create_by(name: "Survey#{s.id}の#{j}番のGroup")
+
+    7.times do |k|
+      q = Question.find_or_create_by(name: "Group#{g.id}の#{k}番目のQuestion")
+      g.questions << q
+    end
+    g.save
+    s.groups << g
+  end
+  s.save
+end
+
 User.all.each do |u|
     u.projects << Project.all.sample(7)
 end
