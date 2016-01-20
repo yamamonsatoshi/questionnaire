@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116131713) do
+ActiveRecord::Schema.define(version: 20160120081855) do
 
   create_table "answer_types", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160116131713) do
     t.datetime "updated_at", null: false
     t.string   "pattern"
     t.integer  "reverse"
+    t.text     "content"
   end
 
   create_table "answers", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160116131713) do
     t.integer  "project_id"
     t.integer  "question_id"
     t.integer  "user_project_id"
+    t.integer  "val"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160116131713) do
     t.datetime "updated_at",     null: false
     t.integer  "answer_type_id"
     t.integer  "group_id"
+    t.boolean  "reverse"
   end
 
   create_table "surveys", force: :cascade do |t|

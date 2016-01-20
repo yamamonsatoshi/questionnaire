@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  pattern    :string
 #  reverse    :integer
+#  content    :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

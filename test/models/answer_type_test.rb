@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  pattern    :string
 #  reverse    :integer
+#  content    :text
 #
 
 require 'test_helper'

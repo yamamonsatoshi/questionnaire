@@ -10,6 +10,7 @@
 #  updated_at     :datetime         not null
 #  answer_type_id :integer
 #  group_id       :integer
+#  reverse        :boolean
 #
 
 class Question < ActiveRecord::Base

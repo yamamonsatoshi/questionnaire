@@ -1,21 +1,43 @@
+- content_for(:head) do
+  = javascript_include_tag "//www.google.com/jsapi", "chartkick"
+= line_chart [[1,2],[2,10],[3, 10],[4, 4], [5,2]]
+
 .row
   .col-md-8
-    table.table.table-striped.table-hover
-      thead
-        tr
-          th アンケート一覧
-          th 締め切り日
-          th 完了しているか
-      tbody
-        tr
-          td = @project.id
-          td = @survey.id
-          td = ""
-    - @groups.each do |g|
-      hr
-      h4 = g.name
-      hr
-      - g.questions.each do |q|
-        p = q.name
+    = form_tag(:controller => 'projects', :action => 'answer_receive', :method => :post)
+      = hidden_field_tag "project_id", @project.id
+      - @groups.each do |g|
+        hr
+        h4 = g.name
+        hr
+        - g.questions.each do |q|
+          - ans_type = q.answer_type
+          - ans_hash = eval(ans_type.content)
+          p = q.name
+          p
+            .form_group
+            - ans_hash.each do |key, value|
+              .radio-inline
+                = radio_button_tag "qa_hash[#{q.id}]", key, value, {:class=>"radio-inline"}
+                = label_tag "#{q.id}_#{key}", value
+      = submit_tag
+
+          / - case ans_type.name
+          / - when "3-choice-like"
+          /   - ans_hash.each do |key, value|
+          /     = radio_button_tag "value[answer][#{q.id}]", key, value
+          /     = label_tag "#{q.id}_#{key}", value
+          / - when "5-choice-like"
+          /   - ans_hash.each do |key, value|
+          /     = "#{key}:#{value} "
+          / - when "3-choice-think"
+          /   - ans_hash.each do |key, value|
+          /     = "#{key}:#{value} "
+          / - when "5-choice-think"
+          /   - ans_hash.each do |key, value|
+          /     = "#{key}:#{value} "
+          / - when "yes-no"
+          /   - ans_hash.each do |key, value|
+          /     = "#{key}:#{value} "
   .col-md-4
 

@@ -29,6 +29,9 @@ gem 'slim-rails'
 # Use annotate
 gem 'annotate'
 
+# Use Graph
+gem 'chartkick'
+
 # Use devise to confirm user
 gem 'devise'
 

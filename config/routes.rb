@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'answer_survey'
     end
     collection do
+      post 'answer_receive'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
