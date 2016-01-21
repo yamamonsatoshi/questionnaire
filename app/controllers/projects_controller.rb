@@ -23,10 +23,29 @@ class ProjectsController < ApplicationController
       a = Answer.create(question_id: q_id, user_project_id: up.id, val: a_val)
   	end
 
-    puts user.id
-    puts project_id
-    puts qa_hash
     redirect_to :back
+  end
+
+  def show_charts
+ 	user = current_user
+  	project_id = params[:id]
+
+    @project = Project.find(project_id)
+    @survey = @project.survey
+    up = UserProject.find_by(user_id: user.id, project_id: project_id)
+
+    @data = []
+
+    @data = @survey.get_group_sum(up)
+
+    # up.answers.each do |ans|
+    #   q_id    = ans.question.id
+    #   ans_val = ans.val
+    #   @data << [q_id, ans_val]
+    # end
+
+    puts @data
+
   end
 
 

@@ -7,6 +7,7 @@
           th アンケート一覧
           th 締め切り日
           th 完了しているか
+          th 結果の表示
       tbody
       - @projects.each do |p|
         tr
@@ -17,6 +18,7 @@
               = fa_icon 'check-square-o'
             - else
               = fa_icon 'square-o'
+          td = link_to "集計の表示", show_charts_project_path(p.id)
   .col-md-4
     .container
 

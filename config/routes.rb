@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :projects do 
     member do
       get 'answer_survey'
+      get 'show_charts'
     end
     collection do
       post 'answer_receive'
